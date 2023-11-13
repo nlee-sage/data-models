@@ -1,0 +1,2 @@
+Component,individualID,specimenID,specimenIdSource,organ,tissue,isPostMortem,BrodmannArea,nucleicAcidSource,cellType,samplingAge,samplingAgeUnits,sampleStatus,fastingState,visitNumber,assay
+BiospecimenMetadataTemplate,R1234567,R1234567_DLPFC,,brain,dorsolateral prefrontal cortex,TRUE,,bulk cell,,,,,,,rnaSeq
