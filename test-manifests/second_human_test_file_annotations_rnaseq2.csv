@@ -1,0 +1,3 @@
+Component,Filename,individualID,specimenID,isMultiSpecimen,assay,fileFormat,consortium,study,grant,resourceType,dataType,dataSubtype,metadataType,analysisType,isModelSystem,chromosome,species,entityId,,,,,,
+FileAnnotationTemplate,Second_Human_Test - RNAseq raw files/R1234567_DLPFC_001_R1.fastq,R1234567,R1234567_DLPFC,FALSE,rnaSeq,fastq,AMP-AD,3Dchromatin,555,experimentalData,geneExpression,raw,,,FALSE,,Human,syn52409225,,,,,,
+FileAnnotationTemplate,Second_Human_Test - RNAseq raw files/R1234567_DLPFC_001_R2.fastq,R1234567,R1234567_DLPFC,FALSE,rnaSeq,fastq,AMP-AD,3Dchromatin,555,experimentalData,geneExpression,raw,,,FALSE,,Human,syn52409224,,,,,,
