@@ -13970,7 +13970,7 @@
             "sms:displayName": "specimenID",
             "sms:required": "sms:true",
             "sms:validationRules": [
-                "matchExactlyOne BiospecimenMetadataTemplate.specimenID value error"
+                "matchAtLeastOne BiospecimenMetadataTemplate.specimenID value error"
             ]
         },
         {
