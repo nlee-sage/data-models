@@ -1,0 +1,2 @@
+Component,specimenID,libraryID,assay,platform,referenceSet,dnaBatch,libraryBatch,sequencingBatch,libraryPrep,libraryPreparationMethod,isStranded,readStrandOrigin,readLength,runType,totalReads,directionalBSseqLibrary,gDNAconc,lambdaDNAconc,pcrCycles,meanCoverage
+AssayBisulfiteSeqMetadataTemplate,,,,,,,,,,,,,,,,,,,,

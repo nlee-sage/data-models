@@ -1,0 +1,2 @@
+Component,individualID,individualIdSource,species,sexChromosome,dateBirth,dateDeath,sex,genotype,genotypeBackground,room,litter,matingID,treatmentDose,modelSystemName
+IndividualAnimalMetadataTemplate,,,,,,,,,,,,,,

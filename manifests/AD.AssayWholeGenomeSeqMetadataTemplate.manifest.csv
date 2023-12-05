@@ -1,0 +1,2 @@
+Component,specimenID,libraryID,assay,platform,referenceSet,dnaBatch,sequencingBatch,libraryPrep,libraryPreparationMethod,readLength,runType,totalReads,numberCells,ratio260over280,ratio260over230,GQN
+AssayWholeGenomeSeqMetadataTemplate,,,,,,,,,,,,,,,,

@@ -1,0 +1,2 @@
+Component,specimenID,assay,platform,RIN,rnaBatch,libraryBatch,nanostringBatch,libraryPrep,libraryPreparationMethod,geneRLF,bindingDensity
+AssayNanostringMetadataTemplate,,,,,,,,,,,

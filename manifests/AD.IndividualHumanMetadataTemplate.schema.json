@@ -1,0 +1,182 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/AD_.IndividualHumanMetadataTemplate.manifest",
+  "title": "AD_.IndividualHumanMetadataTemplate.manifest",
+  "type": "object",
+  "properties": {
+    "brainWeight": {},
+    "cohort": {
+      "enum": [
+        "LBP",
+        "MSBB",
+        "ROSMAP",
+        "MAYO",
+        "UPenn",
+        "Pitt ADRC",
+        "Banner",
+        "MARS",
+        "MCR",
+        "NYBB",
+        "DiCAD",
+        "ABC-DS",
+        "CHDWB",
+        "BLSA",
+        "BEB-Miller",
+        "ACT",
+        "HPGP",
+        "CLINCOR",
+        "UPBB",
+        "UW ADRC",
+        "Framingham",
+        "Emory_ADRC",
+        "EHBS",
+        "ADNI",
+        "MC",
+        "RADC",
+        "HUP",
+        "SMRI",
+        "HBTRC",
+        "UK Biobank",
+        "MCJ",
+        ""
+      ]
+    },
+    "apoeGenotype": {
+      "enum": [
+        "22",
+        "34",
+        "24",
+        "44",
+        "23",
+        "33",
+        ""
+      ]
+    },
+    "PMI": {},
+    "ethnicity": {},
+    "ageDeathUnits": {
+      "enum": [
+        "PCW",
+        "months",
+        "years",
+        "days",
+        "gestational weeks",
+        "weeks",
+        ""
+      ]
+    },
+    "Braak": {},
+    "Component": {},
+    "diagnosisCriteria": {},
+    "race": {
+      "enum": [
+        "American Indian or Alaska Native",
+        "Black or African American",
+        "White",
+        "Asian",
+        "Native Hawaiian or Other Pacific Islander",
+        ""
+      ]
+    },
+    "species": {
+      "enum": [
+        "Human",
+        "Rat",
+        "Rhesus macaque",
+        "Gallus gallus",
+        "Pan troglodytes",
+        "Mouse",
+        "Sus scrofa",
+        "Drosophila melanogaster"
+      ]
+    },
+    "mannerDeath": {
+      "enum": [
+        "accident",
+        "homicide",
+        "undetermined",
+        "natural causes",
+        "suicide",
+        ""
+      ]
+    },
+    "sex": {
+      "enum": [
+        "male",
+        "female"
+      ]
+    },
+    "diagnosis": {
+      "enum": [
+        "anxiety",
+        "Parkinson's disease",
+        "mild cognitive impairment",
+        "no cognitive impairment",
+        "Alzheimer disease with psychosis",
+        "corticobasal degeneration disorder",
+        "Fibrocystic Breast Disease",
+        "Ovary Cancer",
+        "vascular dementia",
+        "Skin Cancer",
+        "Williams Syndrome",
+        "Substance Related Disorder",
+        "dementia",
+        "Neurofibromatosis 1",
+        "pathological aging",
+        "MCI-DS",
+        "frontotemporal dementia",
+        "hypoxia",
+        "gliosis",
+        "Tourette Syndrome",
+        "Not Applicable",
+        "Cervical Cancer",
+        "Lung Cancer",
+        "obesity",
+        "Affective Disorder",
+        "control",
+        "Juvenile Myelomonocytic Leukemia",
+        "obsessive compulsive disorder",
+        "Colon Cancer",
+        "Breast Cancer",
+        "AD-DS",
+        "Major Depressive Disorder",
+        "Pancreatic Cancer",
+        "Schizophrenia",
+        "Bladder Cancer",
+        "multiple system atrophy",
+        "CS-DS",
+        "dystonia",
+        "traumatic brain injury",
+        "amyotrophic lateral sclerosis",
+        "Leukemia",
+        "Brain Cancer",
+        "Prostate Cancer",
+        "Autism Spectrum Disorder",
+        "type 2 diabetes mellitus",
+        "essential tremor",
+        "Neurofibromatosis 2",
+        "progressive supranuclear palsy",
+        "Bipolar Disorder",
+        "Lewy body disease",
+        "Alzheimer Disease",
+        ""
+      ]
+    },
+    "ageDeath": {},
+    "pH": {},
+    "causeDeath": {},
+    "individualID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "yearsEducation": {},
+    "CERAD": {}
+  },
+  "required": [
+    "species",
+    "sex",
+    "individualID"
+  ]
+}

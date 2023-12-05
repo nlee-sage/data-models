@@ -1,0 +1,2 @@
+Component,individualID,specimenID,specimenIdSource,modelSystemType,sourceCell,cellType,reprogrammingMethod,differentiationMethod,passage,terminalDifferentiationPoint,samplingAge,samplingAgeUnits,treatmentType,nucleicAcidSource,assay
+BiospecimenInvitroMetadataTemplate,,,,,,,,,,,,,,,

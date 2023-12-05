@@ -1,0 +1,2 @@
+Component,specimenID,bodyPart,tissueWeight,nucleicAcidSource,genotype,ageDays,nIndividuals,nMale,nFemale,temperature
+BiospecimenDrosophilaMetadataTemplate,,,,,,,,,,

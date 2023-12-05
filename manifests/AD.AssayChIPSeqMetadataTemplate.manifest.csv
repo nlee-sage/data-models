@@ -1,0 +1,2 @@
+Component,specimenID,libraryID,assay,platform,referenceSet,libraryBatch,libraryPreparationMethod,sequencingBatch,assayTarget,antibody,vendor,catalogNumber,lotNumber,antibodyAmount,antibodyAmountUnits,chromatinAmount,chromatinAmountUnits,isStranded,readStrandOrigin,readLength,runType,totalReads
+AssayChIPSeqMetadataTemplate,,,,,,,,,,,,,,,,,,,,,,

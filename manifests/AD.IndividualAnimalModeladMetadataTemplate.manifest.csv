@@ -1,0 +1,2 @@
+Component,individualID,climbID,microchipID,birthID,matingID,individualIdSource,materialOrigin,sex,species,generation,dateBirth,ageDeath,ageDeathUnits,brainWeight,rodentWeight,rodentDiet,bedding,room,waterpH,treatmentDose,treatmentType,stockNumber,genotype,genotypeBackground,individualCommonGenotype,modelSystemName,officialName
+IndividualAnimalModeladMetadataTemplate,,,,,,,,,,,,,,,,,,,,,,,,,,,

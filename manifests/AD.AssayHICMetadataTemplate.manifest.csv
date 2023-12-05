@@ -1,0 +1,2 @@
+Component,specimenID,libraryID,assay,platform,referenceSet,libraryBatch,libraryPrep,libraryPreparationMethod,pcrCycles,sequencingBatch,readLength,runType,totalReads,validHiCContacts
+AssayHICMetadataTemplate,,,,,,,,,,,,,,

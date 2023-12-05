@@ -1,0 +1,2 @@
+Component,specimenID,libraryID,assay,platform,RIN,dnaBatch,referenceSet,rnaBatch,libraryBatch,sequencingBatch,libraryPrep,libraryPreparationMethod,libraryVersion,isStranded,readStrandOrigin,readLength,runType,totalReads,validBarcodeReads,numberCells,medianGenes,medianUMIs,ratio260over280,ratio260over230,GQN
+AssaySTARRSeqMetadataTemplate,,,,,,,,,,,,,,,,,,,,,,,,,

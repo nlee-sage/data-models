@@ -1,0 +1,2 @@
+Component,specimenID,assay,platform,controlType,batch,batchChannel,TMTType,fragmentation,resolution,multiconsensusStudyFileID
+AssayTMTquantitationMetadataTemplate,,,,,,,,,,

@@ -1,0 +1,2 @@
+Component,specimenID,libraryID,assay,platform,referenceSet,transposaseBatch,libraryBatch,libraryPreparationMethod,pcrCycles,sequencingBatch,isStranded,readStrandOrigin,readLength,runType,meanCoverage,meanGCContent
+AssayATACSeqMetadataTemplate,,,,,,,,,,,,,,,,

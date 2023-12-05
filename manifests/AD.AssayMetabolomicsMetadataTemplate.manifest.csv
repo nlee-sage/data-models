@@ -1,0 +1,2 @@
+Component,specimenID,assay,batch,platform,platformLocation,ionMode,metaboliteType,batchSize,controlType,softwareName,spectrometerFrequency
+AssayMetabolomicsMetadataTemplate,,,,,,,,,,,

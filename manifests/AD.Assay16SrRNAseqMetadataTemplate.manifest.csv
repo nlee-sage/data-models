@@ -1,0 +1,2 @@
+Component,specimenID,assay,platform,dnaBatch,dnaExtractionMethod,libraryBatch,sequencingBatch,libraryPrep,readLength,runType,assayTarget
+Assay16SrRNAseqMetadataTemplate,,,,,,,,,,,
