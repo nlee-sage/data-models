@@ -16421,7 +16421,7 @@
         {
             "@id": "bts:Filename",
             "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
+            "rdfs:comment": "Name of a file",
             "rdfs:label": "Filename",
             "rdfs:subClassOf": [
                 {
@@ -16431,8 +16431,8 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "filename",
-            "sms:required": "sms:false",
+            "sms:displayName": "Filename",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -16569,6 +16569,23 @@
             },
             "sms:displayName": "grant",
             "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Imagingfilename",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Name of imaging file that individual has data in.",
+            "rdfs:label": "Imagingfilename",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "imagingfilename",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
@@ -27035,7 +27052,7 @@
                     "@id": "bts:ScanID"
                 },
                 {
-                    "@id": "bts:Filename"
+                    "@id": "bts:Imagingfilename"
                 },
                 {
                     "@id": "bts:Platform"
@@ -27425,7 +27442,7 @@
                     "@id": "bts:FieldStrength"
                 },
                 {
-                    "@id": "bts:Filename"
+                    "@id": "bts:Imagingfilename"
                 },
                 {
                     "@id": "bts:ContrastAgent"
@@ -27523,7 +27540,7 @@
                     "@id": "bts:Ligand"
                 },
                 {
-                    "@id": "bts:Filename"
+                    "@id": "bts:Imagingfilename"
                 },
                 {
                     "@id": "bts:Platform"
