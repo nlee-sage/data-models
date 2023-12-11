@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+imagingfilename,Name of imaging file that individual has data in.,,,,False,ManifestColumn,,SageBionetworks,,string,imaging
