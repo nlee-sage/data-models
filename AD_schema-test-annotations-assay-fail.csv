@@ -1,0 +1,2 @@
+Component,Filename,individualID,specimenID,isMultiSpecimen,assay,fileFormat,consortium,study,grant,resourceType,dataType,dataSubtype,metadataType,analysisType,isModelSystem,chromosome,species,Id,entityId
+FileAnnotationTemplate,Second_Human_Test - RNAseq processed files/Dummy data file.xlsx,no_ind_id,no_spec_id,TRUE,flerp,excel,AMP-AD,ABC-DS,UO18675309,experimentalData,geneExpression,processed,,,FALSE,,Human,9908a357-a3b5-4d75-9676-b4937fddc771,syn52622973
