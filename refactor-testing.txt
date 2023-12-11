@@ -1,0 +1,322 @@
+# Schematic schema refactor testing with CLI
+
+# created new venv w/ python 3.10.9
+# installed schematicpy==23.11.dev2 w/ pip
+# checkout new  branch in adkp data models repo
+
+# started by using AD.model.jsonld data model version in config file
+
+# this ran fine:
+schematic schema convert AD.model.csv
+
+# output:
+""" Starting schematic...
+Parsing data model.
+Generating data model graph.
+Validating the data model internally.
+warning: Node: de-novo assembly contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Genome-Wide Association contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: genome-wide pleiotropy contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: anxiety-related behavior contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: FIA-MSMS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: HI-C contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: HPLC-MSMS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: LC-MS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: LC-MSMS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: LC-SRM contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: liquid chromatography-electrochemical detection contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: long-read rnaSeq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: m6A-rnaSeq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MDMS-SL contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: NOMe-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: oxBS-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Ribo-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UPLC-ESI-QTOF-MS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UPLC-MSMS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: whole-cell patch clamp contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: IE_V1-V3 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: R-loops contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Alpha-dri contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: B-lymphocytes contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: CD8+ T-Cells contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: epithelial-like contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-derived astrocytes contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-derived glia contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-derived neuron contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-derived neuronal progenitor cell contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-derived telencephalic organoids contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: monocyte-derived microglia contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: NeuN- contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: SH-SY5Y contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: ABC-DS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: BEB-Miller contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: AMP-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: M2OVE-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Psych-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Resilience-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: AD-DS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: CS-DS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MCI-DS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.ABCA7A1527G contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.CEACAM1KO contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.Clasp2L163P contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.CR1long contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.Il1rapExon2KO contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.MthfrC677T contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.Plcg2M28L contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.Snx1D465N contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: NIMH-HBCC contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UM-BTB contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UW-CDL contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Accel-NGS 2S Plus contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Accel-NGS Methyl-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: CEL-seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Drop-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Omni-ATAC contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: sac-seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Smart-seq1 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Smart-seq2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Smart-seq4 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Ultralow Methyl-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: 3xTg-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: APPKM670-671NL-PSEN1deltaexon9 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: APPS1_Plexin-B1-KO contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: B6.Clu contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: B6.Gfap-APOE4 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Bin1.B6 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: BRI2-AB42 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Cd2ap.B6 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: MAPT-P301K contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Plexin-B1-KO contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: TAUPS19_Plexin-B1-KO contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: TYROBP_KO.KO contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: TYROBP_WT.KO contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Affy5.0 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Affy6.0 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Affymetrix Human Gene 1.0 ST Array contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: BGISEQ-500 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: ddSEQ Single-Cell Isolator contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_HumanOmni1-Quadv1.0 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: llumina Infinium General Screening Array 24-Kit v3.0 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Illumina MouseWG-6 v2.0 expression beadchip contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_Omni2.5-8 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_Omni2.5-8_v1.1 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_Omni2.5-8_v1.3 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_Omni5-Quad contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: IlluminaHumanHT-12_V3_0_R1 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: IlluminaInfiniumGSAMD-24v2-0 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_Infinium-HumanMethylation450-BeadChip contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Infinium Global Diversity Array-8 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Infinium Omni2.5Exome-8 v1.1 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Infinium Omni2.5Exome-8 v1.3 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Infinium Omni2.5Exome-8 v1.4 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Infinium Omni2.5Exome-8 v1.5 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Q Exactive HF-X contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: quadrupole time-of-flight contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Simoa HD-1 Analyzer contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: time-of-flight contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Xevo TQ-S contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: dmel_r6.06 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: MMUL1.0 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: CytoTune iPS 2.0 Sendai Reprogramming Kit contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: 45% high-fat diet contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: formalin-fixed contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: AD-BXD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: ADMC_ADNI2-GO contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: AMP-AD_DiverseCohorts contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Aging-PheWAS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: APOE-TR contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: BCM-DMAS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: CMC-PEC contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: HDAC1-cKOBrain contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-HiC contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_APP.PS1 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_Levetiracetam-5XFAD contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_MicrobiomePilot contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_PrimaryScreen contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt.Proteomics_Metabolomics_Pilot contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_StrainValidation contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_APOE4.Trem2.R47H contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_Verubecestat_5XFAD contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: MC-BrAD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MC-CAA contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MOA-PAD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_5XFAD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_APOE4_KI contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Abca7_APOE4_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_APOE4_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Ceacam_KO_APOE4_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_hAbeta_KI contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Harmonization contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_hCR1_KI_on_APOE4_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_hTau_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Il1rapKO_APOE4_Trem2_exon2KO contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Mthfr_APOE4_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Rat_F344 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Trem2_R47H contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: NHP-Macaque contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: NHP-Chimpanzee contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: NPS-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: ROSMAP-IN contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: ROSMAP-IA contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: SEA-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: SMIB-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: TS-RNAseq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: U1-70_PrimaryCellCulture contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UCI_3xTg-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UCI_Trem2-R47H_NSS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UCLA-ASD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: VirusResilience_Mayo.MSBB.ROSMAP contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Yale-ASD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+Converting data model to JSON-LD
+By default, the JSON-LD output will be stored alongside the first input CSV or JSON-LD file. In this case, it will appear here: 'AD.model.jsonld'. You can use the `--output_jsonld` argument to specify another file path.
+The Data Model was created and saved to 'AD.model.jsonld' location.
+Execution time: 00:11 (M:S) """
+
+# get manifest: (still using jsonld in config file)
+schematic manifest -c schematic-config.yml get -dt IndividualHumanMetadataTemplate -s
+
+# note: actually misspelled the template name and I liked this error message!
+'''
+LookupError: The DataType entered (IndividualMetadataTemplate) could not be found in the data model schema. Please confirm that the datatype is in the data model and that the spelling matches the class label in the .jsonld file.'''
+
+# running above with correct spelling, got:
+'''
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.jsonld.
+The title argument is being taken from configuration file, i.e., AD_.
+Parsing data model.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+Generating data model graph.
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+JSON schema successfully generated from schema.org schema!
+Permission Id: anyoneWithLink
+Find the manifest template using this Google Sheet URL:
+https://docs.google.com/spreadsheets/d/1RiKmn7yiZwh_TQw0u-ZAjIljNb8Ms7mNPWg4li21Rdw
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+Find the manifest template using this CSV file path: AD.IndividualHumanMetadataTemplate.manifest.csv
+'''
+
+# the google sheet manifest looked ok, except I was expecting the columns individualID, sex, and species to be required. Instead, only species was blue/required.
+
+# filled this manifest and saved as a csv in this directory, ran validation still with jsonld model in config
+schematic model --config schematic-config.yml validate -dt IndividualHumanMetadataTemplate -mp AD_schema-test.csv
+
+#output:
+'''
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.jsonld.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+JSON schema successfully generated from schema.org schema!
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+warning: See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+warning:   return np.find_common_type(types, [])
+Could not find local context root directory
+Created temporary directory '/var/folders/dk/0kvw_jgs0x36k4d9nls882hc0000gq/T/tmpeno48rre' for ephemeral docs site
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+Could not find local context root directory
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/great_expectations/data_context/data_context/abstract_data_context.py:2705: DeprecationWarning: create_expectation_suite is deprecated as of v0.15.48 and will be removed in v0.18. Please use add_expectation_suite or add_or_update_expectation_suite instead.
+warning:   warnings.warn(
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/great_expectations/data_context/data_context/abstract_data_context.py:417: DeprecationWarning: save_expectation_suite is deprecated as of v0.15.48 and will be removed in v0.18. Please use update_expectation_suite or add_or_update_expectation_suite instead.
+warning:   warnings.warn(
+        0 expectation(s) included in expectation_suite.
+Calculating Metrics: 0it [00:00, ?it/s]
+Your manifest has been validated successfully. There are no errors in your manifest, and it can be submitted without any modifications.
+'''
+
+# HOWEVER!
+# then I tried changing the data model source in the config file to "AD.model.csv" and reran manifest get and validate
+# manifest get with csv data model:
+
+schematic manifest -c schematic-config.yml get -dt IndividualHumanMetadataTemplate -s
+
+#output:
+'''
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.jsonld.
+The title argument is being taken from configuration file, i.e., AD_.
+Parsing data model.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+Generating data model graph.
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+JSON schema successfully generated from schema.org schema!
+Permission Id: anyoneWithLink
+Find the manifest template using this Google Sheet URL:
+https://docs.google.com/spreadsheets/d/192QAasX7vlg4EeVRo3RjTqpc5EGtvQl7wugr5atw_d8
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+Find the manifest template using this CSV file path: AD.IndividualHumanMetadataTemplate.manifest.csv
+'''
+
+# when I use the csv, the columns individualID, species, and sex are all required/blue (as expected), when they weren't earlier with the jsonld
+
+# I confirmed that e.g. individualID is set as required in the jsonld generated from the csv
+{
+            "@id": "bts:IndividualID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Identifying string linked to the individual or animal being studied",
+            "rdfs:label": "IndividualID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "individualID",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+
+# then I tried validation with the same filled test manifest as before, using the csv in the config file, and got some weird errors:
+schematic model --config schematic-config.yml validate -dt IndividualHumanMetadataTemplate -mp AD_schema-test.csv
+
+
+'''
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.csv.
+JSON schema successfully generated from schema.org schema!
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+warning: See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+warning:   return np.find_common_type(types, [])
+Could not find local context root directory
+Created temporary directory '/var/folders/dk/0kvw_jgs0x36k4d9nls882hc0000gq/T/tmprpo5wu5l' for ephemeral docs site
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+Could not find local context root directory
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/great_expectations/data_context/data_context/abstract_data_context.py:2705: DeprecationWarning: create_expectation_suite is deprecated as of v0.15.48 and will be removed in v0.18. Please use add_expectation_suite or add_or_update_expectation_suite instead.
+warning:   warnings.warn(
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/great_expectations/data_context/data_context/abstract_data_context.py:417: DeprecationWarning: save_expectation_suite is deprecated as of v0.15.48 and will be removed in v0.18. Please use update_expectation_suite or add_or_update_expectation_suite instead.
+warning:   warnings.warn(
+        0 expectation(s) included in expectation_suite.
+Calculating Metrics: 0it [00:00, ?it/s]
+error: For the attribute 'Wrong schema', on row 2, 'sex' is a required property.
+error: For the attribute 'Wrong schema', on row 2, 'individualID' is a required property.
+[['2', 'Wrong schema', "'sex' is a required property", 'Wrong schema'], ['2', 'Wrong schema', "'individualID' is a required property", 'Wrong schema']]
+'''
+
+# Not sure what the attribute "wrong schema" is!
+# individualID and sex are required properties but in this test manifest there are values provided so it should pass!
+

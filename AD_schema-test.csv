@@ -1,0 +1,2 @@
+Component,IndividualID,cohort,species,Sex,Race,Ethnicity,YearsEducation,apoeGenotype,diagnosis,DiagnosisCriteria,AgeDeath,ageDeathUnits,CauseDeath,MannerDeath,PMI,Braak,CERAD,BrainWeight,PH
+IndividualHumanMetadataTemplate,ind_1,ADNI,Mouse,female,,,,,,,,,,,,,,,
