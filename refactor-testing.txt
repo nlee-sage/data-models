@@ -320,3 +320,198 @@ error: For the attribute 'Wrong schema', on row 2, 'individualID' is a required 
 # Not sure what the attribute "wrong schema" is!
 # individualID and sex are required properties but in this test manifest there are values provided so it should pass!
 
+### Testing submission of manifest
+# first using jsonld in config file
+# synID is a dataset folder in a test study in the AD project
+
+schematic model -c schematic-config.yml submit -mp AD_schema-test.csv -d syn52236797 -dl -mrt file_only
+
+#output:
+'''
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.jsonld.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+Querying table/view: 'syn51324810' ... [####################]100.00%   100/100   Done...
+Downloading  [#-------------------]3.91%   2.3MB/58.3MB (1.9MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [####----------------]17.64%   10.3MB/58.3MB (8.1MB/s) SYNAPSE_TABLE_QUERY_Downloading  [######--------------]31.37%   18.3MB/58.3MB (13.8MB/s) SYNAPSE_TABLE_QUERYDownloading  [#########-----------]45.09%   26.3MB/58.3MB (15.6MB/s) SYNAPSE_TABLE_QUERYDownloading  [############--------]58.82%   34.3MB/58.3MB (19.5MB/s) SYNAPSE_TABLE_QUERYDownloading  [###############-----]72.55%   42.3MB/58.3MB (23.6MB/s) SYNAPSE_TABLE_QUERYDownloading  [#################---]86.27%   50.3MB/58.3MB (25.0MB/s) SYNAPSE_TABLE_QUERYDownloading  [####################]100.00%   58.3MB/58.3MB (28.4MB/s) SYNAPSE_TABLE_QUERY_131500984.csv.synapse_download_131500984 Done...
+    [WARNING] /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+  return np.find_common_type(types, [])
+
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+warning: See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+warning:   return np.find_common_type(types, [])
+
+##################################################
+ Uploading file to your external S3 storage 
+##################################################
+
+
+##################################################
+ Uploading file to your external S3 storage 
+##################################################
+
+Uploading [####################]100.00%   311.0bytes/311.0bytes (275.4bytes/s) AD_schema-test.csv Done...
+    Associated manifest file with dataset on Synapse.
+File at 'AD_schema-test.csv' was successfully associated with dataset 'syn52236797'.
+'''
+
+# confirmed it uploaded correctly
+# now try with csv in config file
+# using same manifest that did not pass validation with the csv
+# synID is a different test folder in the same test project
+
+schematic model -c schematic-config.yml submit -mp AD_schema-test.csv -d syn52236798 -dl -mrt file_only
+
+#output: also successfully uploaded
+'''
+schematic-config.yml submit -mp AD_schema-test.csv -d syn52236798 -dl -mrt file_only
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.csv.
+Querying table/view: 'syn51324810' ... [####################]100.00%   100/100   Done...
+Downloading  [#-------------------]3.91%   2.3MB/58.3MB (2.4MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [####----------------]17.64%   10.3MB/58.3MB (6.7MB/s) SYNAPSE_TABLE_QUERY_Downloading  [######--------------]31.37%   18.3MB/58.3MB (11.3MB/s) SYNAPSE_TABLE_QUERYDownloading  [#########-----------]45.09%   26.3MB/58.3MB (15.7MB/s) SYNAPSE_TABLE_QUERYDownloading  [############--------]58.82%   34.3MB/58.3MB (20.4MB/s) SYNAPSE_TABLE_QUERYDownloading  [###############-----]72.55%   42.3MB/58.3MB (24.9MB/s) SYNAPSE_TABLE_QUERYDownloading  [#################---]86.27%   50.3MB/58.3MB (28.4MB/s) SYNAPSE_TABLE_QUERYDownloading  [####################]100.00%   58.3MB/58.3MB (29.5MB/s) SYNAPSE_TABLE_QUERY_131501005.csv.synapse_download_131501005 Done...
+    [WARNING] /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+  return np.find_common_type(types, [])
+
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+warning: See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+warning:   return np.find_common_type(types, [])
+
+##################################################
+ Uploading file to your external S3 storage 
+##################################################
+
+
+##################################################
+ Uploading file to your external S3 storage 
+##################################################
+
+ / Associated manifest file with dataset on Synapse.
+File at 'AD_schema-test.csv' was successfully associated with dataset 'syn52236798'.
+'''
+
+### try whole process with a file annotation template just to see
+# using csv data model in config
+# use a test folder with fake data file
+schematic manifest -c schematic-config.yml get -dt FileAnnotationTemplate -d syn52236801 -s
+
+# that didn't generate a manifest with the filename
+#output:
+'''
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.csv.
+The title argument is being taken from configuration file, i.e., AD_.
+Parsing data model.
+Generating data model graph.
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+Querying table/view: 'syn51324810' ... [####################]100.00%   100/100   Done...
+Downloading  [#-------------------]3.91%   2.3MB/58.3MB (2.3MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [####----------------]17.64%   10.3MB/58.3MB (8.3MB/s) SYNAPSE_TABLE_QUERY_Downloading  [######--------------]31.37%   18.3MB/58.3MB (11.0MB/s) SYNAPSE_TABLE_QUERYDownloading  [#########-----------]45.09%   26.3MB/58.3MB (15.8MB/s) SYNAPSE_TABLE_QUERYDownloading  [############--------]58.82%   34.3MB/58.3MB (19.8MB/s) SYNAPSE_TABLE_QUERYDownloading  [###############-----]72.55%   42.3MB/58.3MB (23.4MB/s) SYNAPSE_TABLE_QUERYDownloading  [#################---]86.27%   50.3MB/58.3MB (26.3MB/s) SYNAPSE_TABLE_QUERYDownloading  [####################]100.00%   58.3MB/58.3MB (29.7MB/s) SYNAPSE_TABLE_QUERY_131501047.csv.synapse_download_131501047 Done...
+    warning: Could not find a manifest that fits basename synapse_storage_manifest in asset view and dataset syn52236801
+JSON schema successfully generated from schema.org schema!
+Permission Id: anyoneWithLink
+Find the manifest template using this Google Sheet URL:
+https://docs.google.com/spreadsheets/d/1l2wv9hs2XotaDA6UKu2u9aq27LJyvwWKbQwiWRRvu6w
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+Find the manifest template using this CSV file path: AD.FileAnnotationTemplate.manifest.csv
+'''
+
+# manifest had the data file and the appropriate required columns
+# try validating + submitting
+schematic model --config schematic-config.yml validate -dt FileAnnotationTemplate -mp AD_schema-test-annotations.csv
+
+# validation successful:
+'''
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.csv.
+JSON schema successfully generated from schema.org schema!
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+warning: See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+warning:   return np.find_common_type(types, [])
+Could not find local context root directory
+Created temporary directory '/var/folders/dk/0kvw_jgs0x36k4d9nls882hc0000gq/T/tmpptck50s9' for ephemeral docs site
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+Could not find local context root directory
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/great_expectations/data_context/data_context/abstract_data_context.py:2705: DeprecationWarning: create_expectation_suite is deprecated as of v0.15.48 and will be removed in v0.18. Please use add_expectation_suite or add_or_update_expectation_suite instead.
+warning:   warnings.warn(
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/great_expectations/data_context/data_context/abstract_data_context.py:417: DeprecationWarning: save_expectation_suite is deprecated as of v0.15.48 and will be removed in v0.18. Please use update_expectation_suite or add_or_update_expectation_suite instead.
+warning:   warnings.warn(
+        0 expectation(s) included in expectation_suite.
+Calculating Metrics: 0it [00:00, ?it/s]
+Your manifest has been validated successfully. There are no errors in your manifest, and it can be submitted without any modifications.
+'''
+
+# try submitting -- still using csv data model
+schematic model -c schematic-config.yml submit -mp AD_schema-test-annotations.csv -d syn52236801 -dl -mrt file_and_entities
+
+# worked great! annotations applied as expected
+'''
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.csv.
+Querying table/view: 'syn51324810' ... [####################]100.00%   100/100   Done...
+Downloading  [#-------------------]3.91%   2.3MB/58.3MB (1.7MB/s) SYNAPSE_TABLE_QUERY_13150Downloading  [####----------------]17.64%   10.3MB/58.3MB (7.1MB/s) SYNAPSE_TABLE_QUERY_131Downloading  [######--------------]31.37%   18.3MB/58.3MB (12.1MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [#########-----------]45.09%   26.3MB/58.3MB (15.5MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [############--------]58.82%   34.3MB/58.3MB (19.7MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [###############-----]72.55%   42.3MB/58.3MB (24.3MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [#################---]86.27%   50.3MB/58.3MB (28.4MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [####################]100.00%   58.3MB/58.3MB (29.2MB/s) SYNAPSE_TABLE_QUERY_131501286.csv.synapse_download_131501286 Done...
+    [WARNING] /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+  return np.find_common_type(types, [])
+
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+warning: See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+warning:   return np.find_common_type(types, [])
+Added annotations to entity: syn52622973
+
+##################################################
+ Uploading file to your external S3 storage 
+##################################################
+
+
+##################################################
+ Uploading file to your external S3 storage 
+##################################################
+
+ / Associated manifest file with dataset on Synapse.
+File at 'AD_schema-test-annotations.csv' was successfully associated with dataset 'syn52236801'.
+'''
+
+### Try with jsonld model
+schematic manifest -c schematic-config.yml get -dt FileAnnotationTemplate -d syn52236801 -s
+
+#output:
+'''
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.jsonld.
+The title argument is being taken from configuration file, i.e., AD_.
+Parsing data model.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+Generating data model graph.
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+Create CSV FileHandle [####################]100.00%   495592/495592   Done...    
+Downloading  [#-------------------]3.91%   2.3MB/58.3MB (2.4MB/s) SYNAPSE_TABLE_QUERY_13150Downloading  [####----------------]17.64%   10.3MB/58.3MB (6.1MB/s) SYNAPSE_TABLE_QUERY_131Downloading  [######--------------]31.37%   18.3MB/58.3MB (10.2MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [#########-----------]45.09%   26.3MB/58.3MB (13.6MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [############--------]58.82%   34.3MB/58.3MB (17.4MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [###############-----]72.55%   42.3MB/58.3MB (19.5MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [#################---]86.27%   50.3MB/58.3MB (22.9MB/s) SYNAPSE_TABLE_QUERY_13Downloading  [####################]100.00%   58.3MB/58.3MB (24.7MB/s) SYNAPSE_TABLE_QUERY_131501292.csv.synapse_download_131501292 Done...
+Downloading  [####################]100.00%   461.0bytes/461.0bytes (1.6MB/s) synapse_storage_manifest_fileannotationtemplate.csv Done...
+    [WARNING] /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+  return np.find_common_type(types, [])
+
+warning: /Users/alinden/.pyenv/versions/3.10.9/envs/schematic-dev-refactor/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+warning: See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+warning:   return np.find_common_type(types, [])
+JSON schema successfully generated from schema.org schema!
+Permission Id: anyoneWithLink
+Find the manifest template using this Google Sheet URL:
+https://docs.google.com/spreadsheets/d/1hq97JnH62qOfPVPT6bGPEFcAjlxzFvZhMnPKsMO8NMg
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+Find the manifest template using this CSV file path: AD.FileAnnotationTemplate.manifest.csv
+'''
+# weird column conflicts with the previously stored manifests -- I think since annotations were not saved as display name, even though I specified?
+# investigate separately?
