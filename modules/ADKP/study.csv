@@ -96,6 +96,7 @@ MODEL-AD_Mthfr_APOE4_Trem2,MODEL-AD Mthfr*C677T/APOE4/Trem2*R47H Study,,,,,study
 MODEL-AD_Rat_F344,MODEL-AD Rat F344 Study,,,,,study,,https://www.synapse.org/#!Synapse:syn20730014,,string,ADKP
 MODEL-AD_Trem2_R47H,MODEL-AD Trem2 R47H Study,,,,,study,,https://www.synapse.org/#!Synapse:syn18634477,,string,ADKP
 MouseHAL,Chronic Haloperidol Effects on Gene Expression and Chromatin Accessibility in Mouse Brain,,,,,study,,https://www.synapse.org/#!Synapse:syn4590850,,string,ADKP
+MountSinai_NPS, The Mount Sinai NPS,,,,,study,,https://www.synapse.org/#!Synapse:syn52160061,,string,ADKP
 MRGWAS,Mendelian randomization of human longevity using genetically-predicted exposures from the GWAS catalog,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn26066886,,string,ADKP
 MSBB,Mount Sinai Brain Bank AD Cohort,,,,,study,,https://www.synapse.org/#!Synapse:syn3159438,,string,ADKP
 MSBB_ArrayTissuePanel,Expression array and coexpression networks on 19 brain regions,,,,,study,,https://www.synapse.org/#!Synapse:syn3157699,,string,ADKP
